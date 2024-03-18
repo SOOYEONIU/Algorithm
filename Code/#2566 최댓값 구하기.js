@@ -11,17 +11,17 @@
 // ];
 //=> 입력받기를 이런 자료구조로 만들기
 
-const inputArr = require("fs").readFileSync('/dev/stdin').toString().trim().split('\n').map(line => line.split(' ').map(item => Number(item)));
+const fs = require('fs');
+let inputArr = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(line => line.split(' ').map(item => Number(item)));
 
-//최댓값 변수, 행 번호, 열 번호
-let maxNum, rowNum, columnNum = 0;  
+let [maxNum, rowNum, columnNum] = [0, 0, 0];
 
 for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
-        if (inputArr[i][j] > maxNum) {
+        if (inputArr[i][j] >= maxNum) {
             maxNum = inputArr[i][j];
             [rowNum, columnNum] = [i + 1, j + 1];
-        }
+        }//if
     }//for2
 }//for1
 console.log(maxNum);
