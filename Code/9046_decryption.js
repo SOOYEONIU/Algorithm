@@ -21,7 +21,7 @@ const maxChar = (str) => {
         if ( charObject[charV] == maxNum ) {
             maxChar = '?';
         } else if ( charObject[charV] > maxNum ) {
-            max = charMap[charV];
+            maxNum = charObject[charV];
             maxChar = charV;
         } 
     }
