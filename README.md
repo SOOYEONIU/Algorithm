@@ -1,6 +1,5 @@
 # Algorithm
-![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) [![Tistory's Badge](https://github-readme-tistory-card.vercel.app/api/badge?name=ssotech&theme={insert_theme})]([https://github.com/loosie/github-readme-tistory-card](https://sootech-story.tistory.com/))
-
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
 ## Activity
 - 콜롬버스 스터디 (2024.03.18 ~ )
 
