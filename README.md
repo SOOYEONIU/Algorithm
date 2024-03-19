@@ -6,7 +6,7 @@
 
 <details>
 <summary>
-  - 1주차 (기초 상식 / 문자열 / 기초 수학)
+  📚 1주차 (기초 상식 / 문자열 / 기초 수학)
 </summary>
   https://sootech-story.tistory.com/10
 </details>
