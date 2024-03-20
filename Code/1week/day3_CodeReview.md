@@ -10,7 +10,7 @@
   객체는 key값, value값으로 이루어져있는데, key값은 사용된 알파벳 문자를 value값에는 해당 알파벳 빈도수를 넣어 객체를 구성하였다.  
   알고리즘으론 for-of / for-in 반복문을 사용하였다.  
 
-3. 코드 리뷰
+3. **코드 리뷰**
 
 ## 리뷰 받은 내용
 - for-in 반복문 안에 if조건문에서 strObject[strKey] == maxNum 이 true일 경우 maxValue = '?';가 실행되는데, 만약 이 단계를 거쳤다면 바로 break를 추가하여
