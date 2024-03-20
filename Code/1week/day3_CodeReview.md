@@ -1,4 +1,5 @@
-#백준 문제 11720, 9046, 1157번 코드리뷰
+첫 번째 코드리뷰 회고
 ---
-###코드리뷰 하면서 배운점
-1. 
+리뷰 받은 내용
+1. https://github.com/SOOYEONIU/CodingTest/blob/main/Code/1week/day2_1157.js
+2. 
