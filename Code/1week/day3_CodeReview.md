@@ -1,6 +1,6 @@
 # 첫 번째 코드리뷰 회고
 ---
-[day1_1157](https://github.com/SOOYEONIU/CodingTest/blob/main/Code/1week/day2_1157.js)
+내가 발표한 코드 : [day1_1157](https://github.com/SOOYEONIU/CodingTest/blob/main/Code/1week/day2_1157.js)
 ### 리뷰 과정
 ---
 1. 간단한 문제 설명
