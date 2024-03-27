@@ -7,7 +7,7 @@
 <summary>
   📚 1주차 (기초 상식 / 문자열 / 기초 수학)
 </summary>
-  [블로그 개념 정리 링크](https://sootech-story.tistory.com/entry/1%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EC%B4%88-%EC%83%81%EC%8B%9D-%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B8%B0%EC%B4%88-%EC%88%98%ED%95%99)
+  https://sootech-story.tistory.com/entry/1%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EC%B4%88-%EC%83%81%EC%8B%9D-%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B8%B0%EC%B4%88-%EC%88%98%ED%95%99
 </details>
 
 <details>
