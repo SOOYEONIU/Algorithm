@@ -7,5 +7,10 @@
 <summary>
   📚 1주차 (기초 상식 / 문자열 / 기초 수학)
 </summary>
-  https://sootech-story.tistory.com/10
+  [블로그 정리 바로가기](https://sootech-story.tistory.com/10)
+</details>
+<summary>
+  📚 2주차 (Stack / Queue / Linked-list)
+</summary>
+  [블로그 정리 바로가기](https://sootech-story.tistory.com/entry/2%EC%A3%BC%EC%B0%A8-Stack-Queue-Linked-list)
 </details>
