@@ -9,6 +9,8 @@
 </summary>
   [블로그 정리 바로가기](https://sootech-story.tistory.com/10)
 </details>
+
+<details>
 <summary>
   📚 2주차 (Stack / Queue / Linked-list)
 </summary>
