@@ -40,6 +40,7 @@
 
 팀원에게 코드를 설명하면서 정확하게 설명하지 못했던 부분들에 대해 다시 한번 찾아보고 정리 및 공유를 통해 팀원과 함께 이해하려 노력하였습니다.
 아래 예시
-<img width="800" alt="image" src="https://github.com/SOOYEONIU/CodingTest/assets/149544640/cf29e793-8c37-4367-b6c9-c25242f09e07">
+<img width="700" alt="image" src="https://github.com/SOOYEONIU/CodingTest/assets/149544640/def753d0-fd94-4e94-a2bf-369aa264e57f">
+
 
 서로의 코드를 보며 궁금한 부분, 개선 사항, 다른 접근법을 함께 생각하고 의논할 수 있었기에 오늘도 유익한 코드 리뷰 시간이 되었습니다.
