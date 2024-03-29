@@ -1,15 +1,16 @@
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
-
+//문자열
 let string = input.shift();
+//명령어 갯수
 let commandNum = Number(input.shift());
 
 let lStack = string.split(""); // 왼쪽 스택 [a, b, c, d]
 let rStack = []; // 오른쪽 스택 []
 
 for (let i = 0; i < commandNum; i++) { 
-    let [cmd, value] = input[i].split(" ");
+    let [cmd, value] = input[i].split(" "); // cmd 명령어 , value 문자
     if (cmd === 'L' && lStack.length) rStack.push(lStack.pop());
     else if (cmd === 'D' && rStack.length) lStack.push(rStack.pop());
     else if (cmd === 'B') lStack.pop();
