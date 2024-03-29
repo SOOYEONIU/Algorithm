@@ -5,68 +5,17 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 let string = input.shift();
 let commandNum = Number(input.shift());
 
-console.log(string)
+let lStack = string.split(""); // 왼쪽 스택 [a, b, c, d]
+let rStack = []; // 오른쪽 스택 []
 
-let inputArray = input.map((command) => command.split(" "));
-
-console.log(inputArray)
-
-class Node { 
-    constructor(data, next=null) { 
-        this.data = data;
-        this.next = next;
-    }
-}//Node
-
-class Stack { 
-    constructor() { 
-        this.first = null;
-        this.last = null;
-        this.length = 0;
-    }
-
-    enqueue(data) {
-        const newNode = new Node(data);
-        if (this.first != null) {
-            this.last.next = newNode;
-            this.last = newNode;
-        } else { 
-            this.first = newNode;
-            this.last = newNode;
-        }
-        this.length++;
-    }
-
-    dequeue() {
-        const deleteData = this.last;
-        this.last.next = this.last;
-        this.length--;
-        return deleteData;
-    }
-
-    peek() { 
-        return this.first.data;
-    }
-
-    size() { 
-        return this.length;
-    }
-}//Stack
-
-const stack1 = new Stack();
-const stack2 = new Stack();
-
-for (let i = 0; i < string.length; i++) { 
-    stack2.enqueue(string[i]); // stack2에 모든 값 입력
+for (let i = 0; i < commandNum; i++) { 
+    let [cmd, value] = input[i].split(" ");
+    if (cmd === 'L' && lStack.length) rStack.push(lStack.pop());
+    else if (cmd === 'D' && rStack.length) lStack.push(rStack.pop());
+    else if (cmd === 'B') lStack.pop();
+    else if (cmd === 'P') lStack.push(value);
 }
 
-inputArray.forEach((value) => {
-    console.log(value[0]);
-
-    switch (value[0]) { 
-        case 'P': console.log('P지롱'); break;
-        case 'L': console.log('L이지롱'); break;
-        case 'B': console.log('B지롱'); break;
-        case 'D': console.log('D지롱'); break;
-    }
-});
+let result = lStack.join("");
+result += rStack.reverse().join(""); // reverse+join으로 요소들의 위치를 뒤집어서 문자열로 바꾼 뒤 기존 문자열에 더해준다.
+console.log(result);
