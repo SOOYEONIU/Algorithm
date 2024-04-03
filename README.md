@@ -21,5 +21,5 @@
 <summary>
   📚 3주차 (Hash table / Deque / 투포인터)
 </summary>
-  [블로그 정리](https://sootech-story.tistory.com/entry/Algorithm-Hash-Table-Deque-%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0)
+  [[Algorithm] Hash Table, Deque, 투포인터 블로그 바로가기] (https://sootech-story.tistory.com/entry/Algorithm-Hash-Table-Deque-%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0)
 </details>
