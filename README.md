@@ -16,3 +16,10 @@
 </summary>
   https://sootech-story.tistory.com/entry/2%EC%A3%BC%EC%B0%A8-Stack-Queue-Linked-list
 </details>
+
+<details>
+<summary>
+  📚 3주차 (Hash table / Deque / 투포인터)
+</summary>
+  [블로그 정리](https://sootech-story.tistory.com/entry/Algorithm-Hash-Table-Deque-%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0)
+</details>
