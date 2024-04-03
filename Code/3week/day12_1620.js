@@ -1,35 +1,21 @@
+//map 활용
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : __dirname + '/input.txt';
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
-const mn = input[0].split(' ');
-
+const mn = input[0].split(' '); // n, m이 담긴 배열
 const [n, m] = [parseInt(mn[0]), parseInt(mn[1])];
 
-const dogam = {};
+const map = new Map();
 
 for (let i = 1; i <= n; i++) { 
-    dogam[i] = input[i];
+    map.set(input[i], i); // 이름 => i번
 }
 
-let result = '';
-
-for (let i = n+1; i <= n + m; i++) { 
-    if (isNaN(parseInt(input[i]))) { // 포켓몬 이름일 때
-        for (let number in dogam) {
-            if (dogam[number] == input[i]) {
-                result += number + '\n';
-                break;
-            } 
-        }
-    } else { // 숫자일 때
-        for (let number in dogam) {
-            if (number == input[i]) {
-                result += dogam[number] + '\n';
-                break;
-            } 
-        } 
+for (let j = n+1; j <= n+m; j++) { // 문제의 개수만큼 반복
+    if (isNaN(Number(input[j]))) { // 문자열 -> 숫자
+        console.log(map.get(input[j]));
+    } else { // 숫자 -> 문자열
+        console.log(input[Number(input[j])]);
     }
 }
-
-console.log(result);
