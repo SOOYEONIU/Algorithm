@@ -54,13 +54,8 @@ for (let i = 1; i <= N; i++){
     cardBox.push(i);
 }
 
-let j = 0;
-while (j < N) {
+while (cardBox.size() !== 1) { 
     cardBox.shift();
-    if (cardBox.size() == 1) {
-        console.log(cardBox.peek());
-        break;
-    }
     cardBox.push(cardBox.shift());
-    j++;
 }
+console.log(cardBox.peek());
