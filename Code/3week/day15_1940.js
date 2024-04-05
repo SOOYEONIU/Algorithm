@@ -2,15 +2,30 @@ const fs = require('fs');
 const filePath = process.platform == 'linux' ? '/dev/stdin' : __dirname + '/input.txt';
 let [N, M, input] = fs.readFileSync(filePath).toString().trim().split('\n');
 const ingredientBox = input.split(' ');
+M = Number(M);
+
+ingredientBox.sort((a, b) => a - b)
+let numberBox = ingredientBox.map(Number);
 
 let count = 0;
-for (let i = 0; i < N; i++) { 
-    for (let j = i+1; j < N; j++) { 
-        let sum = Number(ingredientBox[i]) + Number(ingredientBox[j]);
-        if (sum === Number(M)) {
-            count++;
-        }
+
+let frontData = numberBox.shift();
+let backData = numberBox.pop();
+
+while (numberBox.length > 0) { 
+    const sum = frontData + backData;
+    if (sum === M) {
+        count++;
+        frontData = numberBox.shift();
+        backData = numberBox.pop();
+    } else if (sum < M) {
+        frontData = numberBox.shift();
+    } else { 
+        backData = numberBox.pop();
     }
+}
+if (frontData + backData == M) { 
+    count++;
 }
 
 console.log(count);
