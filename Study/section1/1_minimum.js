@@ -2,11 +2,12 @@
 function solution(a, b, c) {
     let answer;
     
-    if (a < b && a < c) {
+    if (a < b) {
         answer = a;
-    } else if (b < a && b < c) {
+    } else {
         answer = b;
-    } else if (c < a && c < b) { 
+    }
+    if (c < answer) { 
         answer = c;
     }
 
