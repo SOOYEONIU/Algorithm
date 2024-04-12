@@ -3,15 +3,17 @@ let input = fs.readFileSync(__dirname + '/input.txt').toString().trim().split("\
 
 const N = Number(input.shift());
 
-let distanceNum = input[0].split(' ').map(Number);
-let priceInfo = input[1].split(' ').map(Number);
+let distanceNum = input[0].split(' ').map((v) => BigInt(v));
+let priceInfo = input[1].split(' ').map((v) => BigInt(v));
 
-let result = 0;
+console.log(distanceNum, priceInfo)
+
+let result = 0n;
 let currentPrice = priceInfo[0];
 
-for (let i = 0; i < N-1; i++) { 
-    result += currentPrice * distanceNum[i]; 
+for (let i = 0; i < N - 1; i++) {
+    result += currentPrice * distanceNum[i];
 
     currentPrice = currentPrice > priceInfo[i + 1] ? priceInfo[i + 1] : currentPrice;
 } // for
-console.log(result);
+console.log(String(result));
