@@ -6,8 +6,6 @@ const N = Number(input.shift());
 let distanceNum = input[0].split(' ').map((v) => BigInt(v));
 let priceInfo = input[1].split(' ').map((v) => BigInt(v));
 
-console.log(distanceNum, priceInfo)
-
 let result = 0n;
 let currentPrice = priceInfo[0];
 
