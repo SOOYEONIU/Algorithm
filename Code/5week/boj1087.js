@@ -5,14 +5,14 @@ input = Number(input);
 
 resultV = 0;
 const fibonacciN = (N) => { 
-    for (let i = 0; i <= N; i++) {
-        if (i == 0) {
-            resultV = 0;
-        } else if (i == 1) {
-            resultV = 1;
-        } else {
-            resultV = fibonacciN(i - 2) + fibonacciN(i - 1);
+    let i = 0;
+    while (i <= N) { 
+        switch (N) { 
+            case 0: resultV = 0; break;
+            case 1: resultV = 1; break;
+            default: resultV = fibonacciN(i - 2) + fibonacciN(i - 1); break;
         }
+        i++;
     }
     return resultV;
 }//fibonacciN
