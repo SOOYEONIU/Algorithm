@@ -1,23 +1,20 @@
 const fs = require('fs');
 let input = fs.readFileSync(__dirname + "/input.txt").toString().trim().split('\n');
 
-const cantore = (str) => { 
-    if (str.includes('---')) {
-        const len = str.length / 3
-        const splitedArr = []
-        for (let i = 0; i <= str.length - len; i += len) {
-            splitedArr.push(str.slice(i, i + len))
-        }
-        splitedArr[0] = cantore(splitedArr[0])
-        splitedArr[1] = splitedArr[1].replaceAll("-", " ")
-        splitedArr[2] = cantore(splitedArr[2])
-        return splitedArr.join("")
+const cantore = (N) => { 
+    if (N == 1) {
+        return "-";
+    } else { 
+        let value = Math.floor(N / 3); // N을 3으로 나눴을 때 몫 값
+        let startEnd = cantore(value); // N 값이 1이 될때까지 재귀함수 실행
+        let center = " ".repeat(value); // center는 공백으로 대체
+        return startEnd + center + startEnd; 
     }
-    return str
 }//cantoe
+
 const result = input.map(Number => {
-    const dash = '-'.repeat(3 ** Number);
-    return cantore(dash);
+    return cantore(3**Number);
 });
 
+// 출력
 console.log(result.join("\n"));
