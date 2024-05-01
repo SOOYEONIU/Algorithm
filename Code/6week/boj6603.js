@@ -9,13 +9,12 @@ const combinations = (arr, n) => {
     }
 
     arr.forEach((current, index, array) => { 
-        const restArr = arr.slice(index + 1);
-        console.log('rest',restArr)
-        const comb = combinations(restArr, n - 1);
-        console.log('comb',comb)
-        const attachArray = comb.map((combValue) => [current, ...combValue]);
+        const restArr = arr.slice(index + 1); // current값 제외 나머지 별도 리스트 저장
+        const comb = combinations(restArr, n - 1); // 위 리스트 받아서, 재귀함수 호출
+        const attachArray = comb.map((combValue) => [current, ...combValue]); // 위의 반환값 + current => 새로운 배열로 변환
 
-        result.push(...attachArray);
+        console.log(attachArray)
+        result.push(...attachArray); // 신규 배열 result 추가
     })
 
     return result;
