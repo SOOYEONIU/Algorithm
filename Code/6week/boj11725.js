@@ -3,10 +3,12 @@ const solution = (input) => {
     const n = +input.shift();
     const tree = Array.from(Array(n + 1), () => []);
     const check = new Array(n + 1).fill(0);
+
     for (let [from, to] of input.map((e) => e.split(" ").map(Number))) {
         tree[from].push(to);
         tree[to].push(from);
     }
+    console.log(tree)
 
     const queue = [];
     check[1] = 1;
