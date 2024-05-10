@@ -11,6 +11,17 @@ for (let i = 0; i < input.length; i++) {
     const [node, left, right] = input[i];
     tree[node] = [left, right];
 }
+`
+{
+  A: [ 'B', 'C' ],
+  B: [ 'D', '.' ],
+  C: [ 'E', 'F' ],
+  E: [ '.', '.' ],
+  F: [ '.', 'G' ],
+  D: [ '.', '.' ],
+  G: [ '.', '.' ]
+}
+`
 
 //전위 순회(Pre-order)
 let preOrderResult = "";
@@ -19,9 +30,9 @@ const recursivePreOrder = (node) => {
     const [left, right] = tree[node];
     //루트 노드를 방문
     preOrderResult += node;
-    //왼쪽 서브 트리를 후위 순회
+    //왼쪽 서브 트리를 순회
     recursivePreOrder(left);
-    //오른쪽 서브 트리를 후위 순회
+    //오른쪽 서브 트리를 순회
     recursivePreOrder(right);
 }
 
@@ -31,6 +42,7 @@ const recursiveInOrder = (node) => {
     if (node == ".") return;
     const [left, right] = tree[node];
     recursiveInOrder(left);
+    //루트 노드 방문
     inOrderResult += node;
     recursiveInOrder(right);
 }
@@ -42,6 +54,7 @@ const recursivePostOrder = (node) => {
     const [left, right] = tree[node];
     recursivePostOrder(left);
     recursivePostOrder(right);
+    //루트 노드 방문
     postOrderResult += node;
 }
 

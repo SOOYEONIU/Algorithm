@@ -4,7 +4,17 @@ let land = fs.readFileSync(__dirname + '/input.txt')
     .trim()
     .split('\n')
     .map(v => v.split(' ').map(Number));
+`
+예제 입력 1
+2 20 50
+50 30
+20 40
 
+ ex
+ 50 | 30
+---------
+ 20 | 40
+`
 // N X N 땅 / L명 이상 R명 이하일 경우 국경선 열기
 let [N, L, R] = land.shift();
 

@@ -1,10 +1,18 @@
 const fs = require('fs');
+`
+보관 후 하루가 지나면, 익은 토마토들의 인접한 곳에 있는 익지 않은 토마토들은 익은 토마토의 영향을 받아 익게 된디.
+하나의 토마토에 인접한 곳은 위, 아래, 왼쪽, 오른쪽, 앞, 뒤 여섯 방향에 있는 토마토를 의미
+
+토마토가 모두 익을 때까지 최소 며칠이 걸리는지를 계산해서 출력
+저장될 때부터 모든 토마토가 익어있는 상태이면 0
+토마토가 모두 익지는 못하는 상황이면 -1
+`
 let input = fs.readFileSync(__dirname + '/input.txt')
     .toString()
     .trim()
     .split('\n')
     .map(v => v.split(' ').map(Number));
-
+// M : 상자의 가로 칸 수, N : 상자의 세로 칸 수, H : 상자의 높이
 let [M, N, H] = input.shift();
 
 const chunk = (data, size) => { // 토마토 상자를 3차원 배열로 변환
@@ -16,9 +24,6 @@ const chunk = (data, size) => { // 토마토 상자를 3차원 배열로 변환
 }
 // 토마토 상자 3차원 배열 
 let box = chunk(input, N);
-//방문 여부 3차원 배열
-let visited = Array.from(Array(H), () => Array.from(Array(N), ()=> new Array(M).fill(false)));
-
 let queue = []; // 익은 토마토의 위치
 let unripe = 0; // 안익은 토마토의 개수
 for (let i = 0; i < H; i++) { 
@@ -37,16 +42,15 @@ for (let i = 0; i < H; i++) {
 if (!unripe) { // 안익은 토마토가 없으면 0을 반환
     console.log(0);
 } else {
-    let dx = [-1, 1, 0, 0, 0, 0]; //x좌표
-    let dy = [0, 0, -1, 1, 0, 0]; //y좌표
-    let dz = [0, 0, 0, 0, -1, 1]; //z좌표
+    let dx = [-1, 1, 0, 0, 0, 0]; //x좌표 M
+    let dy = [0, 0, -1, 1, 0, 0]; //y좌표 N
+    let dz = [0, 0, 0, 0, -1, 1]; //z좌표 H
 
-    //BFS
+    //인접 노드를 우선적으로 탐색하기 때문에 BFS (너비 우선 탐색) 알고리즘 선택 => queue 자료 구조 사용
     const BFS = (queue) => {
         let answer = 0; // 걸린 기간(일수) 담을 변수
-        let i = 0; // 큐 인덱스
-        while (queue.length > i) {
-            let [z, x, y, days] = queue[i++];
+        while (queue.length) {
+            let [z, x, y, days] = queue.shift();
 
             //현재 위치 기준 인접한 여섯 곳 탐색 반복문
             for (let i = 0; i < 6; i++) {
