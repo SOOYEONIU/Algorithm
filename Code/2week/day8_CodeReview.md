@@ -1,5 +1,5 @@
 # 두 번째 코드리뷰 회고 👩🏻‍💻
-내가 발표한 코드 : [day8_18258](https://github.com/SOOYEONIU/CodingTest/blob/main/Code/2week/day8_18258.js)
+내가 발표한 코드 : [day6_18258](https://github.com/SOOYEONIU/CodingTest/blob/main/Code/2week/day6_18258.js)
 
 ## 📍 리뷰 과정
 1. **간단한 문제 설명**  
