@@ -14,35 +14,24 @@ const solution = (tempN, tempBoard) => {
     let dx = [-1, 0, 1, 0];
     let dy = [0, -1, 0, 1];
 
-    const dfs = (ix, iy) => { 
-        let bonguri = true;
-        for (let i = 0; i < 4; i++) { 
-            let nx = ix + dx[i];
-            let ny = iy + dy[i];
-
-            if (nx >= 0 && nx < tempN && ny >= 0 && ny < tempN ) {
-                if (tempBoard[nx][ny] < tempBoard[ix][iy]) {
-                    continue;
-                } else { 
-                    bonguri = false;
-                    return bonguri;
-                }
-            } 
-        }
-        return bonguri;
-    }
-
     for (let i = 0; i < tempN; i++) { 
         for (let j = 0; j < tempN; j++) { 
-            let result = dfs(i, j);
+            let bonguri = true;
+            for (let k = 0; k < 4; k++) {
+                let nx = i + dx[k];
+                let ny = j + dy[k];
 
-            if (result) {
-                answer += 1;
+                if (nx >= 0 && nx < tempN && ny >= 0 && ny < tempN && tempBoard[nx][ny] >= tempBoard[i][j]) {
+                    bonguri = false;
+                    break;
+                }
+            }
+            if (bonguri) {
+                answer++;
             }
         }
     }
-
-    return answer
+    return answer;
 }
 
 console.log(solution(N, newBoard));
