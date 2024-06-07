@@ -7,29 +7,16 @@ const solution = (tempInfo) => {
     let [N, K] = tempInfo.shift(); // N장의 카드, K번째로 큰 수
     let dummyN = tempInfo[0];
 
-    let sumArr = [];
+    let sumTemp = new Set;
     for (let i = 0; i < N; i++) { 
         for (let j = i+1; j < N; j++) { 
             for (let k = j+1; k < N; k++) { 
-                sumArr.push(dummyN[i] + dummyN[j] + dummyN[k]);
+                sumTemp.add(dummyN[i] + dummyN[j] + dummyN[k]);
             }
         }
     }
-    sumArr.sort((a, b) => b - a);
-    let count = 0;
-    for (sumNum of sumArr) { 
-        console.log(sumNum, answer)
-        if (count === 3) {
-            break;
-        }
-
-        if (sumNum !== answer) {
-            answer = sumNum;
-            count++;
-        } else { 
-            continue;
-        }
-    }
+    let sumArr = Array.from(sumTemp).sort((a, b) => b - a);
+    answer = sumArr[K-1]
 
     return answer;
 }
