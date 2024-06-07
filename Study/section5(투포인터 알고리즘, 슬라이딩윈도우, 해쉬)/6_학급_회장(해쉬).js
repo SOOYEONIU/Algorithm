@@ -1,24 +1,22 @@
 const solution = (tempArr) => { 
     let answer;
     let [studentNum, everyVote]= [tempArr[0], tempArr[1]];
-    console.log(studentNum, everyVote)
-    let resultVote = {};
+    let voteCount = {};
 
-    // 결과 Object 만들기
     for (let i = 0; i < everyVote.length; i++) { 
-        if (!Object.keys(resultVote).includes(everyVote[i])) {
-            resultVote[everyVote[i]] = 1;
+        if (!voteCount[everyVote[i]]) {
+            voteCount[everyVote[i]] = 1;
         } else { 
-            resultVote[everyVote[i]]++;
+            voteCount[everyVote[i]]++;
         }
     }
 
     // 학급 회장 투표 가장 많은 사람 뽑기
-    let currentTop = 0;
-    for (let member in resultVote) { 
-        if (currentTop < resultVote[member]) { 
+    let maxVotes = 0;
+    for (let member in voteCount) { 
+        if (maxVotes < voteCount[member]) { 
             answer = member;
-            currentTop = resultVote[member];
+            maxVotes = voteCount[member];
         }
     }
 
