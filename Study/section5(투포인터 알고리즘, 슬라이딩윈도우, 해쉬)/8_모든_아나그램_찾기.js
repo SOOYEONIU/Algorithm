@@ -11,21 +11,15 @@ const solution = (tempInput) => {
     let tH = new Map();
     let sH = new Map();
     for (let str of subStr) { 
-        if (sH.has(str)) {
-            sH.set(str, sH.get(str) + 1);
-        } else { 
-            sH.set(str, 1);
-        }
+        sH.set(str, (sH.get(str) || 0) + 1);
     }
     let len = subStr.length-1;
     for (let i = 0; i < len; i++) { 
-        if (tH.has(tempStr[i])) tH.set(tempStr[i], tH.get(tempStr[i]) + 1);
-        else tH.set(tempStr[i], 1);
+        tH.set(tempStr[i], (tH.get(tempStr[i]) || 0) + 1);
     }
     let lt = 0;
     for (let rt = len; rt < tempStr.length; rt++) { 
-        if (tH.has(tempStr[rt])) tH.set(tempStr[rt], tH.get(tempStr[rt]) + 1);
-        else tH.set(tempStr[rt], 1);
+        tH.set(tempStr[rt], (tH.get(tempStr[rt]) || 0) + 1);
 
         if (compareMaps(tH, sH)) answer++;
         tH.set(tempStr[lt], tH.get(tempStr[lt])-1);
