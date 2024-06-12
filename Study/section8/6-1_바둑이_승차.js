@@ -11,8 +11,8 @@ const solution = (c, weightArr) => {
         }
     }
     DFS(0, 0);
-    console.log(maxNum)
+    return maxNum;
 }
 let c = 259;
 let weightArr = [81, 58, 42, 33, 61];
-solution(c, weightArr);
+console.log(solution(c, weightArr));
