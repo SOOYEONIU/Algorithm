@@ -7,15 +7,15 @@ let [[N], [...input]] = fs.readFileSync(process.platform === 'linux' ? '/dev/std
     .map(v => v.split(' ').map(Number))
 
 const solution = (N, input) => {
-    let answer = [];
+    let totalSum = [];
     input.sort((a, b) => a - b);
     let sum = 0;
     for (let timeInfo of input) { 
         sum += timeInfo
-        answer.push(sum);
+        totalSum.push(sum);
     }
-    let totalSum = 0;
-    answer.map(value => totalSum += value);
-    return totalSum;
+    let answer = 0;
+    totalSum.map(value => answer += value);
+    return answer;
 }
 console.log(solution(N, input));
